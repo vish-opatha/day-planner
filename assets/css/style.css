@@ -74,24 +74,24 @@ textarea {
 }
 
 /* This is me */
-.savebuttton{
-  padding:20px;
-}
 
-/* .alignCenter{
-  text-align: center;
-} */
-
-/* main .alignCenter{
-  text-align: center;
-} */
 
 .row button{
-  width:100%;
+  
   padding:0 px;
+  height:50px;
 }
 
-#comment-input
+#display-planner div,#display-planner div{
+  height:50px;
+}
+
+#display-planner{
+  width:80%;
+ 
+}
+
+.comment-input
 {
   border: 0.5px solid rgb(214, 189, 189);
 }
