@@ -19,6 +19,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -28,11 +31,28 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-    </div>
+   
+    <main class="container-fluid">
+      <div id="display-planner" class="container">
+        <div class="row justify-content-center" >
+          <p class="col-md-1"> Time: 2.30am</p>
+          <textarea name="comment" id="comment-input" class="col-md-8" placeholder="Leave a comment..."></textarea>
+          <button class="btn-sm custom-btn savebuttton col-md-1">Start</button>
+        </div>
+        <div class="row justify-content-center" >
+          <p class="col-md-1"> Time: 3.30am</p>
+          <textarea name="comment" id="comment-input" class="col-md-8" placeholder="Leave a comment..."></textarea>    
+          <button class="btn-sm custom-btn savebuttton col-md-1">Start</button></div>
+        </div>
+      </div> 
+
+      <div>
+        <button id="startB">start</button>
+      </div>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
