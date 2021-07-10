@@ -4,7 +4,15 @@ var timeSlots = ['9.00 am','10.00 am','11.00 am','12.00 pm','1.00 pm','2.00 pm',
 var timeSlotCount=timeSlots.length;
 
 
-
+function timeDisplay()
+{
+    var timeNow =moment().format("HH mm")
+    console.log(timeNow);
+    var startTime = moment('06:00pm', "HH:mm aa");
+    timeNow.isBetween(startTime)
+   
+      
+}
 
 
 
@@ -35,14 +43,14 @@ function createRows()
         var rowButton=$('<button>');
 
         rowDiv.addClass("row justify-content-center");
-        rowP.addClass("col-md-2");
+        rowP.addClass("col-1 col-md-2 hour ");
         rowP.text(timeSlots[i]);
-        rowTextArea.addClass("col-md-9");
+        rowTextArea.addClass("col-2 col-md-9");
         // rowTextArea.attr("class","comment-input");
         rowTextArea.attr("id",timeId);
         rowButton.text("💾");
         rowButton.attr("time",timeId);
-        rowButton.addClass("btn-sm custom-btn savebuttton col-md-1");
+        rowButton.addClass("btn-sm custom-btn savebuttton col-1 col-md-1 saveBtn ");
 
         rowDiv.append(rowP);
         rowDiv.append(rowTextArea);
@@ -109,8 +117,6 @@ function renderSavedAppointments()
    }
 }
 
-
-
 //######### Binding the click event of save buttons to the <div>
 displayPln.on('click','button',function(event){
     event.preventDefault();
@@ -133,6 +139,7 @@ function init()
     displayCurrentTime();
     createRows();
     renderSavedAppointments();
+    timeDisplay();
 }
 
 init();

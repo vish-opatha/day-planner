@@ -1,20 +1,34 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Work Day Scheduler - Day Planner
 
-## Your Task
+## Overview
+This is a project carried out to create a simple calenar application that helps the user to save appointments or events for the working hours. It is implemented by using HTML, CSS and jquery. Majority of the styles and layouts were done using the Bootstrap framework.
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+Moment Javascript is used to manupulate the date and time when required.
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+## Important Links
+Refer to the following links:
+* [Day Planner - Deployed page](ttps://vish-opatha.github.io/day-planner/)
+* [Day Planner - Github repository](https://github.com/vish-opatha/day-planner)
 
-## User Story
+## Mock-up
+* Following are the related images.
+* [Day Planner - Video](https://drive.google.com/file/d/1nl-SqQ4iny6qRsCnynR8jLN_oSMIMh-a/view?usp=sharing)
+---
+Highlights :
+  1. When the 'Start' button is pressed quiz starts with the timer
+  2. Questions are presented to the user until the available time is zero or question count in the pool is zero.
+  3. Once the user clicks an answer, result is displayed.
+  4. When all questions are answered or availble time is zero, user is presented to save the score.
+  5. Marks are saved in local storage, and if there are any marks are saved already, they are loaded in view_highscore.html.
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
-
-## Acceptance Criteria
+## Technical Acceptance - Work Done
+1. When the planner is loaded,  current date is displayed on the page and moment.js is used for that.
+2. When the daily planner is opened, timeblocks are created using javascript(JQuery).
+3. ##########################WHEN I view the timeblocks for that day
+THEN each timeblock is color coded to indicate whether it is in the past, present, or future#################
+4. Once the user click a particular timeblock, the user can enter details of the event. A text area is used for this purpose.
+5. Selected answer is validated against the stored correct answer, and displays the result(correc or wrong) below the possible answer buttons.
+4.
 
 ```md
 GIVEN I am using a daily planner to create a schedule
