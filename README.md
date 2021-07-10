@@ -12,7 +12,7 @@ Refer to the following links:
 
 ## Mock-up
 * Following are the related images.
-* [Day Planner - Video](https://drive.google.com/file/d/1nl-SqQ4iny6qRsCnynR8jLN_oSMIMh-a/view?usp=sharing)
+
 ---
 Highlights :
   1. When the 'Start' button is pressed quiz starts with the timer
@@ -26,78 +26,26 @@ Highlights :
 2. When the daily planner is opened, timeblocks are created using javascript(JQuery).
 3. ##########################WHEN I view the timeblocks for that day
 THEN each timeblock is color coded to indicate whether it is in the past, present, or future#################
-4. Once the user click a particular timeblock, the user can enter details of the event. A text area is used for this purpose.
-5. Selected answer is validated against the stored correct answer, and displays the result(correc or wrong) below the possible answer buttons.
-4.
+4. When the user clicks the relevant save button, event will be saved to the local storage and data attributes of the button have used to identify the timeslot.
+5. When the page is refreshed, saved events will persist, through rendering them from local storage.
+6. Bootstrap is used for layouts and JQuery is used to perform the javascript functionality.
 
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
+## Deployment - Work Done
+1. Application is deployed at live URL using Github pages, and the link is in the "Important links" section.
+2. No errors were found in loading and executing the function.
+3. Link to the Github URL is given and the repository and it contains the complete code.
 
-The following animation demonstrates the application functionality:
+## Application Quality - Work Done
+1. Deployed page resembles the mock-up in design and functionality.
+2. Deployed page is easy to understand and navigate.
+3. CSS file has been amended to improve the responsive nature of the application as much as possible.
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
-
-
-## Grading Requirements
-
-This homework is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * Uses a date utility library to work with date and time
-
-### Deployment: 32%
-
-* Application deployed at live URL
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the homework instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
+## Repository Quality - Work Done
+1. Repository is named as day-planner.
+2. Regarding the folder structure, "Assets" includes separate folders for CSS and javascript.
+4. Tags are indented accordingly and comments are included while following the best practices for naming conventions.
+5. Changes were committed multiple times with messages.
 
 - - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+📝 Created by Vish Opatha (Last updated on 05 July 2021).
+

@@ -43,9 +43,9 @@ function createRows()
         var rowButton=$('<button>');
 
         rowDiv.addClass("row justify-content-center");
-        rowP.addClass("col-1 col-md-2 hour ");
+        rowP.addClass("col-2 col-md-2 hour ");
         rowP.text(timeSlots[i]);
-        rowTextArea.addClass("col-2 col-md-9");
+        rowTextArea.addClass("col-4 col-md-9");
         // rowTextArea.attr("class","comment-input");
         rowTextArea.attr("id",timeId);
         rowButton.text("💾");
