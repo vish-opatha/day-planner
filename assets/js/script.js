@@ -4,15 +4,15 @@ var timeSlots = ['9.00 am','10.00 am','11.00 am','12.00 pm','1.00 pm','2.00 pm',
 var timeSlotCount=timeSlots.length;
 
 
-function timeDisplay()
-{
-    var timeNow =moment().format("HH mm")
-    console.log(timeNow);
-    var startTime = moment('06:00pm', "HH:mm aa");
-    timeNow.isBetween(startTime)
+// function timeDisplay()
+// {
+//     var timeNow =moment().format("HH mm")
+//     console.log(timeNow);
+//     var startTime = moment('06:00pm', "HH:mm aa");
+//     timeNow.isBetween(startTime)
    
       
-}
+// }
 
 
 
@@ -76,18 +76,26 @@ function saveAppointments(timeId,targetTextArea)
 {
     var appointmentList =[];
     var savedApptList =JSON.parse(localStorage.getItem('apptList'));
-
-    if (savedApptList === null)
+    
+    if(targetTextArea === "")
     {
-        appointmentList.push(timeId+"-"+targetTextArea);
-        localStorage.setItem('apptList',JSON.stringify(appointmentList));
+        console.log("nothing to print"+targetTextArea);
     }
 
     else
     {
-        appointmentList=JSON.parse(localStorage.getItem('apptList'));
-        appointmentList.push(timeId+"-"+targetTextArea)
-        localStorage.setItem('apptList',JSON.stringify(appointmentList));
+        if (savedApptList === null)
+        {
+            appointmentList.push(timeId+"-"+targetTextArea);
+            localStorage.setItem('apptList',JSON.stringify(appointmentList));
+        }
+
+        else
+        {
+            appointmentList=JSON.parse(localStorage.getItem('apptList'));
+            appointmentList.push(timeId+"-"+targetTextArea)
+            localStorage.setItem('apptList',JSON.stringify(appointmentList));
+        }
     }
 }
 
@@ -104,8 +112,6 @@ function renderSavedAppointments()
           var apptText=savedApptList[j].split("-");
           var timeSlot =apptText[0];
           var appt=apptText[1];
-          console.log(timeSlot+ " "+appt);
-
           var displayApptArea = $("#"+timeSlot);
           displayApptArea.text(appt);
       }
@@ -139,7 +145,7 @@ function init()
     displayCurrentTime();
     createRows();
     renderSavedAppointments();
-    timeDisplay();
+    //timeDisplay();
 }
 
 init();
