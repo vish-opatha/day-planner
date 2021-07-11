@@ -1,34 +1,19 @@
 var displayPln =$('#display-planner');
-var timerDisplay =$('#currentDay')
+var timerDisplay =$('#currentDay');
 var timeSlots = ['9.00 am','10.00 am','11.00 am','12.00 pm','1.00 pm','2.00 pm','3.00 pm','4.00 pm','5.00 pm'];
+
 var timeSlotCount=timeSlots.length;
+var timeIDCounter= 9;
 
-
-// function timeDisplay()
-// {
-//     var timeNow =moment().format("HH mm")
-//     console.log(timeNow);
-//     var startTime = moment('06:00pm', "HH:mm aa");
-//     timeNow.isBetween(startTime)
-   
-      
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//This is a working code and can be used to save items
-//******************************************************* */
+//############ This function is used to update and display current time ################
+function displayCurrentTime()
+{
+    timerInterval = setInterval(function() 
+    {
+        var today = moment();
+        timerDisplay.text(today.format("dddd, MMMM Do YYYY"));  
+    }, 10);
+}
 
 //######## This function creates rows of the daily planner ##########
 function createRows()
@@ -60,43 +45,40 @@ function createRows()
         timeId++;
     }   
 }
-   
-//############ This function is used to update and display current time ################
-function displayCurrentTime()
+
+//############ This function is used to update the background color of the text area ################
+function colourTextArea()
 {
     timerInterval = setInterval(function() 
     {
-        var today = moment();
-        timerDisplay.text(today.format("dddd, MMMM Do YYYY"));  
-    }, 10);
-}
-
-//########## This function is used to save the appointments to the local storage 
-function saveAppointments(timeId,targetTextArea)
-{
-    var appointmentList =[];
-    var savedApptList =JSON.parse(localStorage.getItem('apptList'));
+        for(t=0;t<timeSlotCount;t++)
+        {
+            var nowtime = moment();
+            var nowtime2=nowtime.format("HH");
+            var slotTime = moment(timeSlots[t],"HH mm a");
+            var colouredTextA =$("#"+timeIDCounter);
     
-    if(targetTextArea === "")
-    {
-        console.log("nothing to print"+targetTextArea);
-    }
+            if(nowtime2==timeIDCounter)
+            {
+                colouredTextA.addClass("present");    
+            }
 
-    else
-    {
-        if (savedApptList === null)
-        {
-            appointmentList.push(timeId+"-"+targetTextArea);
-            localStorage.setItem('apptList',JSON.stringify(appointmentList));
-        }
+            else
+            {
+                if(nowtime.isAfter(slotTime))
+                {
+                    colouredTextA.addClass("past");
+                }
+    
+                else
+                {
+                    colouredTextA.addClass("future");
+                }
+            }
 
-        else
-        {
-            appointmentList=JSON.parse(localStorage.getItem('apptList'));
-            appointmentList.push(timeId+"-"+targetTextArea)
-            localStorage.setItem('apptList',JSON.stringify(appointmentList));
+            timeIDCounter++;   
         }
-    }
+    }, 100);
 }
 
 //######### This function render saved appointments when page loads ############
@@ -104,6 +86,7 @@ function renderSavedAppointments()
 {
    var savedApptList= [];
    savedApptList=JSON.parse(localStorage.getItem('apptList'));
+   
    if(savedApptList!==null)
    {
       var i=savedApptList.length;
@@ -123,29 +106,51 @@ function renderSavedAppointments()
    }
 }
 
-//######### Binding the click event of save buttons to the <div>
-displayPln.on('click','button',function(event){
-    event.preventDefault();
-    var cbutton = event.target;
-   
-   var timeId = $(event.target).attr('time');
-//    $( event.target ).closest( "li" ).toggleClass( "highlight" );
-   var targetTextArea =$(event.target).siblings().eq(1).val().trim();
-   
-   saveAppointments(timeId,targetTextArea);
-   console.log(cbutton);
-   console.log(timeId);
+//########## This function is used to save the appointments to the local storage 
+function saveAppointments(timeId,targetTextArea)
+{
+    var appointmentList =[];
+    var savedApptList =JSON.parse(localStorage.getItem('apptList'));
+    
+    if(targetTextArea === "")
+    {
+         window.alert("⚠️ Your appointment is blank.\n Please enter your appointment details before saving.");      
+    }
 
-  
-})
+    else
+    {
+        if (savedApptList === null)
+        {
+            appointmentList.push(timeId+"-"+targetTextArea);
+            localStorage.setItem('apptList',JSON.stringify(appointmentList));
+        }
 
+        else
+        {
+            appointmentList=JSON.parse(localStorage.getItem('apptList'));
+            appointmentList.push(timeId+"-"+targetTextArea)
+            localStorage.setItem('apptList',JSON.stringify(appointmentList));
+        }
+    }
+}
 
+//######### Initiallization function ################
 function init()
 {
     displayCurrentTime();
     createRows();
     renderSavedAppointments();
-    //timeDisplay();
+    colourTextArea();
 }
+
+//######### Binding the click event of save buttons to the <div> ###############
+//Event delegation is used by using the display planner div
+displayPln.on('click','button',function(event){
+    event.preventDefault();
+    var timeId = $(event.target).attr('time');
+    var targetTextArea =$(event.target).siblings().eq(1).val().trim();
+   
+    saveAppointments(timeId,targetTextArea);   
+});
 
 init();
