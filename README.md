@@ -7,7 +7,7 @@ Moment Javascript is used to manupulate the date and time when required.
 
 ## Important Links
 Refer to the following links:
-* [Day Planner - Deployed page](ttps://vish-opatha.github.io/day-planner/)
+* [Day Planner - Deployed page](https://vish-opatha.github.io/day-planner/)
 * [Day Planner - Github repository](https://github.com/vish-opatha/day-planner)
 
 ## Mock-up
@@ -24,8 +24,7 @@ Highlights :
 ## Technical Acceptance - Work Done
 1. When the planner is loaded,  current date is displayed on the page and moment.js is used for that.
 2. When the daily planner is opened, timeblocks are created using javascript(JQuery).
-3. ##########################WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future#################
+3. Timeblocks are constantly updated with the different background color to indicate past,present or future.
 4. When the user clicks the relevant save button, event will be saved to the local storage and data attributes of the button have used to identify the timeslot.
 5. When the page is refreshed, saved events will persist, through rendering them from local storage.
 6. Bootstrap is used for layouts and JQuery is used to perform the javascript functionality.
@@ -47,5 +46,5 @@ THEN each timeblock is color coded to indicate whether it is in the past, presen
 5. Changes were committed multiple times with messages.
 
 - - -
-📝 Created by Vish Opatha (Last updated on 05 July 2021).
+📝 Created by Vish Opatha (Last updated on 07 July 2021).
 
