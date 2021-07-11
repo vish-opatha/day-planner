@@ -1,7 +1,7 @@
 var displayPln =$('#display-planner');
 var timerDisplay =$('#currentDay');
 var timeSlots = ['9.00 am','10.00 am','11.00 am','12.00 pm','1.00 pm','2.00 pm','3.00 pm','4.00 pm','5.00 pm'];
-
+var savedTimeIDs = [];
 var timeSlotCount=timeSlots.length;
 var timeIDCounter= 9;
 
@@ -96,6 +96,7 @@ function renderSavedAppointments()
           var appt=apptText[1];
           var displayApptArea = $("#"+timeSlot);
           displayApptArea.text(appt);
+          savedTimeIDs.push(timeSlot);
       }
    }
 
@@ -121,14 +122,38 @@ function saveAppointments(timeId,targetTextArea)
         if (savedApptList === null)
         {
             appointmentList.push(timeId+"-"+targetTextArea);
+            savedTimeIDs.push(timeId);
             localStorage.setItem('apptList',JSON.stringify(appointmentList));
         }
 
         else
         {
-            appointmentList=JSON.parse(localStorage.getItem('apptList'));
-            appointmentList.push(timeId+"-"+targetTextArea)
-            localStorage.setItem('apptList',JSON.stringify(appointmentList));
+            if(savedTimeIDs.includes(timeId))
+            {
+                var saveConfirm = window.confirm("❓ You already have an appointment for this time.\n Are you sure you want to update this?");
+
+                if(saveConfirm)
+                {
+                    var apptLocation = savedTimeIDs.indexOf(timeId);
+                    appointmentList=JSON.parse(localStorage.getItem('apptList'));
+                    appointmentList[apptLocation]= (timeId+"-"+targetTextArea);
+                    localStorage.setItem('apptList',JSON.stringify(appointmentList));
+                }
+
+                else
+                {
+                    return;
+                }
+            }
+
+            else
+            {
+                savedTimeIDs.push(timeId);
+                appointmentList=JSON.parse(localStorage.getItem('apptList'));
+                appointmentList.push(timeId+"-"+targetTextArea)
+                localStorage.setItem('apptList',JSON.stringify(appointmentList));
+            }
+            
         }
     }
 }

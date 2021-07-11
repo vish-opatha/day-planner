@@ -28,6 +28,8 @@ Highlights :
 4. When the user clicks the relevant save button, event will be saved to the local storage and data attributes of the button have used to identify the timeslot.
 5. When the page is refreshed, saved events will persist, through rendering them from local storage.
 6. Bootstrap is used for layouts and JQuery is used to perform the javascript functionality.
+7. Existing CSS class in style.css were used and some modifications and additions were done.
+8. Validations were added to make sure, not to save empty appointment to the local storage and when saving an appointment on the same timeblock.
 
 ## Deployment - Work Done
 1. Application is deployed at live URL using Github pages, and the link is in the "Important links" section.
