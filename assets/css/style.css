@@ -11,7 +11,7 @@ textarea {
   color: #000000;
   border-left: 1px solid black;
   padding: 10px;
-  width:100%; /*This was me*/
+  width:100%; 
   margin:0;
 }
 
@@ -42,8 +42,7 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
-  text-align: center;
-  
+  text-align: center; 
 }
 
 .past {
@@ -67,6 +66,7 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  padding: 0 px;
 }
 
 .saveBtn i:hover {
@@ -74,22 +74,16 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
-/* This is me */
-
-.row button{
-  
-  padding:0 px;
+/* Following styles were newly created*/
+#display-planner{
+  width:80%;
 }
 
-#display-planner div,#display-planner div{
+#display-planner div{
   height:50px;
 }
 
-#display-planner{
-  width:80%;
- 
-}
-
+/* Following class was not used as I didnot want the border to have the different colour on the text area*/
 .comment-input
 {
   border: 0.5px solid rgb(214, 189, 189);

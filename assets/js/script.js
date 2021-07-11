@@ -27,15 +27,14 @@ function createRows()
         var rowTextArea=$('<textarea>');
         var rowButton=$('<button>');
 
-        rowDiv.addClass("row justify-content-center");
-        rowP.addClass("col-2 col-md-2 hour ");
+        rowDiv.addClass("row justify-content-center time-block");
+        rowP.addClass("col-3 col-md-2 hour");
         rowP.text(timeSlots[i]);
-        rowTextArea.addClass("col-4 col-md-9");
-        // rowTextArea.attr("class","comment-input");
+        rowTextArea.addClass("col-6 col-md-9 description");
         rowTextArea.attr("id",timeId);
         rowButton.text("💾");
         rowButton.attr("time",timeId);
-        rowButton.addClass("btn-sm custom-btn savebuttton col-1 col-md-1 saveBtn ");
+        rowButton.addClass("btn-sm custom-btn col-3 col-md-1 saveBtn ");
 
         rowDiv.append(rowP);
         rowDiv.append(rowTextArea);
