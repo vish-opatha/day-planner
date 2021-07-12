@@ -14,11 +14,14 @@ Refer to the following links:
 * This is the index page view.
 ![Main view](./assets/images/main.png)
 
+
 * This is message that will appear when the user tries to save an empty appointment.
 ![Empty appointments validation](./assets/images/msg-one.jpg)
 
+
 * This is message that will appear when the user tries to save an appointment for already existing appointment.
-![Existing appointments validation](./assets/images/msg-two.jpg)
+![Existing appointments validation](./assets/images/msg-two.JPG)
+
 
 ---
 Highlights :
