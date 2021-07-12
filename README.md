@@ -11,7 +11,14 @@ Refer to the following links:
 * [Day Planner - Github repository](https://github.com/vish-opatha/day-planner)
 
 ## Mock-up
-* Following are the related images.
+* This is the index page view.
+![Main view](./assets/images/main.png)
+
+* This is message that will appear when the user tries to save an empty appointment.
+![Empty appointments validation](./assets/images/msg-one.jpg)
+
+* This is message that will appear when the user tries to save an appointment for already existing appointment.
+![Existing appointments validation](./assets/images/msg-two.jpg)
 
 ---
 Highlights :
@@ -43,7 +50,7 @@ Highlights :
 
 ## Repository Quality - Work Done
 1. Repository is named as day-planner.
-2. Regarding the folder structure, "Assets" includes separate folders for CSS and javascript.
+2. Regarding the folder structure, "Assets" includes separate folders for images,CSS and javascript.
 4. Tags are indented accordingly and comments are included while following the best practices for naming conventions.
 5. Changes were committed multiple times with messages.
 
