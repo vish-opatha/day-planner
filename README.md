@@ -22,15 +22,6 @@ Refer to the following links:
 * This is message that will appear when the user tries to save an appointment for already existing appointment.
 ![Existing appointments validation](./assets/images/msg-two.JPG)
 
-
----
-Highlights :
-  1. When the 'Start' button is pressed quiz starts with the timer
-  2. Questions are presented to the user until the available time is zero or question count in the pool is zero.
-  3. Once the user clicks an answer, result is displayed.
-  4. When all questions are answered or availble time is zero, user is presented to save the score.
-  5. Marks are saved in local storage, and if there are any marks are saved already, they are loaded in view_highscore.html.
-
 ## Technical Acceptance - Work Done
 1. When the planner is loaded,  current date is displayed on the page and moment.js is used for that.
 2. When the daily planner is opened, timeblocks are created using javascript(JQuery).
@@ -58,5 +49,5 @@ Highlights :
 5. Changes were committed multiple times with messages.
 
 - - -
-📝 Created by Vish Opatha (Last updated on 07 July 2021).
+📝 Created by Vish Opatha (Last updated on 21 July 2021).
 
